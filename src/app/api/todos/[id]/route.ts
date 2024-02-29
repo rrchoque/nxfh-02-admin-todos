@@ -55,3 +55,21 @@ export async function PUT(request: Request, { params }: Segments ) {
     return NextResponse.json(error, { status: 400 });
   }
 }
+
+export async function DELETE(request: Request, { params }: Segments ) { 
+
+  const todo = await getTodo(params.id);
+
+  if ( !todo ) {
+    return NextResponse.json({ message: `Todo con id ${ params.id } no exite` }, { status: 404 });
+  }
+
+  try {
+    await prisma.todo.delete({ where: { id: params.id } });
+
+    return NextResponse.json({message: "Todo eliminado correctamente"});
+    
+  } catch (error) {
+    return NextResponse.json(error, { status: 400 });
+  }
+}
