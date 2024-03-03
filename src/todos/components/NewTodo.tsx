@@ -26,7 +26,7 @@ export const NewTodo = () => {
   const deleteCompleted = async() => {
     await todosApi.deleteCompletedTodos();
     router.refresh();
-  }  
+  }
 
   return (
     <form onSubmit={ onSubmit } className='flex w-full'>
