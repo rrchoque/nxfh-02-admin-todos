@@ -6,7 +6,7 @@ import Image from "next/image"
 import { IoAddCircleOutline, IoTrashOutline } from "react-icons/io5";
 import { Star } from "./Star";
 import { useRouter } from "next/navigation";
-import { addProductToCart } from "@/shopping-cart/actions/actions";
+import { addProductToCart, removeProductFromCart } from "@/shopping-cart/actions/actions";
 
 interface Props {
   id    : string;
@@ -22,6 +22,11 @@ export const ProductCard = ({ id, name, price, rating, image }:Props) => {
 
   const onAddToCart = () => {
     addProductToCart(id);
+    router.refresh();
+  }
+
+  const onRemoveFromCart = () => {
+    removeProductFromCart(id);
     router.refresh();
   }
 
@@ -74,6 +79,7 @@ export const ProductCard = ({ id, name, price, rating, image }:Props) => {
                 <IoAddCircleOutline size={25} />
             </button>
             <button
+              onClick={ onRemoveFromCart }
               className="text-white focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-600 hover:bg-red-700 focus:ring-red-800">
                 <IoTrashOutline size={20} />
             </button>
