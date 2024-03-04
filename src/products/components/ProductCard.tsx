@@ -3,7 +3,7 @@
 // https://tailwindcomponents.com/component/e-commerce-product-card
 
 import Image from "next/image"
-import { IoAddCircleOutline, IoTrashOutline } from "react-icons/io5";
+import { IoAdd, IoTrashOutline } from "react-icons/io5";
 import { Star } from "./Star";
 import { useRouter } from "next/navigation";
 import { addProductToCart, removeProductFromCart } from "@/shopping-cart/actions/actions";
@@ -76,7 +76,7 @@ export const ProductCard = ({ id, name, price, rating, image }:Props) => {
             <button
               onClick={ onAddToCart }
               className="text-white mr-2  focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
-                <IoAddCircleOutline size={25} />
+                <IoAdd size={25} />
             </button>
             <button
               onClick={ onRemoveFromCart }

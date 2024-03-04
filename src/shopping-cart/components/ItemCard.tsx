@@ -4,7 +4,7 @@
 import Image from "next/image";
 import type{ Product } from "@/products/data/products";
 
-import { IoAddCircleOutline, IoRemove } from "react-icons/io5";
+import { IoAdd, IoRemove } from "react-icons/io5";
 import { addProductToCart, removeSingleItemFromCart } from "../actions/actions";
 
 import { useRouter } from "next/navigation";
@@ -71,7 +71,7 @@ export const ItemCard = ({ product, quantity }: Props) => {
         <button
           onClick={ onAddToCart }
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            <IoAddCircleOutline size={25} />
+            <IoAdd size={25} />
         </button>
         <span className="text-2xl text-white mx-10">{quantity}</span>
         <button
