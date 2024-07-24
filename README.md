@@ -46,5 +46,10 @@ __password:__ 123456
 npx prisma init
 npx prisma migrate dev
 npx prisma generate
-
 ```
+
+![Captura de pantalla](images/captura-001.webp)
+
+![Captura de pantalla](images/captura-002.webp)
+
+![Captura de pantalla](images/captura-003.webp)
